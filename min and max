@@ -1,0 +1,13 @@
+import numpy
+
+# Read N and M
+n, m = map(int, input().split())
+
+# Create the 2D array from N lines of input
+storage = numpy.array([input().split() for _ in range(n)], int)
+
+# Find the minimum value along axis 1 (rows)
+min_axis_1 = numpy.min(storage, axis=1)
+
+# Find the maximum of those minimums
+print(numpy.max(min_axis_1))
